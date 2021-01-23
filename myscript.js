@@ -28,8 +28,11 @@ function populateList(plates = [], platesList) {
 }
 
 function toggleDone(e) {
-  if(!e.target.matches('input')) return // skipp this unmless it's an input
-  console.log(e.target);
+  if(!e.target.matches('input')) return; // skipp this unmless it's an input
+  const el = e.target;
+  const index = el.dataset.index;
+  items[index].done = !items[index].done;
+  localStorage.setItem('items', JSON.stringify(items));
 }
 
 addItems.addEventListener('submit', addItem);
