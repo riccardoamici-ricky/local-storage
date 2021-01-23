@@ -8,7 +8,9 @@ function addItem(e) {
   const item = {
     text,
     done: false
-  }
-  console.log(item);
+  };
+
+  items.push(item);
+  this.reset();
 }
 addItems.addEventListener('submit', addItem);
